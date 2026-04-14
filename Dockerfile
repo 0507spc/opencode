@@ -21,4 +21,4 @@ RUN curl -fsSL https://opencode.ai/install | bash
 ENV PATH=/home/op/.opencode/bin:$PATH
 
 # Run opencode web server on container start
-CMD ["opencode", "web", "--hostname", "0.0.0.0", "--port", "4096"]
+# CMD ["opencode", "web", "--hostname", "0.0.0.0", "--port", "4096"]
