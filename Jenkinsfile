@@ -46,7 +46,7 @@ pipeline {
         dir("${CODE_NAME}") {
           sh '''
             TAG=${CODE_NAME}:${FULL_TAG} docker compose build 
-            docker compose build --tag opencode:${FULL_TAG}
+            ###docker compose build --tag opencode:${FULL_TAG}
             docker tag opencode:${FULL_TAG} opencode:latest
           '''
         }
