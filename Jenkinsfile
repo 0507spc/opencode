@@ -45,8 +45,8 @@ pipeline {
       steps {
         dir("${CODE_NAME}") {
           sh '''
-            TAG=${FULL_TAG} docker compose build 
-            #--no-cache
+            docker compose build --tag opencode:${FULL_TAG}
+            docker tag opencode:${FULL_TAG} opencode:latest
           '''
         }
       }
@@ -70,7 +70,7 @@ pipeline {
       steps {
         dir("${CODE_NAME}") {
           sh '''
-            docker tag ${CODE_NAME}:latest ${REGISTRY_URL}/${REGISTRY_REPO}/${CODE_NAME}:${FULL_TAG}
+            docker tag opencode:${FULL_TAG} ${REGISTRY_URL}/${REGISTRY_REPO}/${CODE_NAME}:${FULL_TAG}
             docker push ${REGISTRY_URL}/${REGISTRY_REPO}/${CODE_NAME}:${FULL_TAG}
           '''
         }
