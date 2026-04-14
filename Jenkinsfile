@@ -69,7 +69,7 @@ pipeline {
       steps {
         dir("${CODE_NAME}") {
           sh '''
-            docker tag opencode:${FULL_TAG} ${REGISTRY_URL}/${REGISTRY_REPO}/${CODE_NAME}:${FULL_TAG}
+            docker tag ${CODE_NAME}-${CODE_NAME}:${FULL_TAG} ${REGISTRY_URL}/${REGISTRY_REPO}/${CODE_NAME}:${FULL_TAG}
             docker push ${REGISTRY_URL}/${REGISTRY_REPO}/${CODE_NAME}:${FULL_TAG}
           '''
         }
