@@ -45,7 +45,8 @@ pipeline {
       steps {
         dir("${CODE_NAME}") {
           sh '''
-            TAG=${FULL_TAG} docker compose build --no-cache
+            TAG=${FULL_TAG} docker compose build 
+            #--no-cache
           '''
         }
       }
