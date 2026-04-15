@@ -2,8 +2,9 @@ FROM ubuntu:24.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
-  curl ca-certificates git openssh-client sudo bash jq iputils-ping \
-  && rm -rf /var/lib/apt/lists/*
+    curl ca-certificates git openssh-client sudo bash jq iputils-ping \
+    python3 python3-pip nodejs npm \
+    && rm -rf /var/lib/apt/lists/*
 
 # non-root user
 RUN useradd -m -s /bin/bash op \
