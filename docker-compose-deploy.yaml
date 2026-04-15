@@ -5,6 +5,7 @@ services:
     #user: "1000:1000"
     ports:
       - 14096:4096
+      - 12048:2048
     environment:
       - HOME=/home/op
       - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
