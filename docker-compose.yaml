@@ -5,8 +5,7 @@ services:
     #network_mode: "host"
     user: "1000:1000"
     ports:
-      - target: 4096
-        published: 4096
+      - "4096:4096"
     environment:
       - HOME=/home/op
       - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
