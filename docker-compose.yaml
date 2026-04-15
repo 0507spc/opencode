@@ -8,6 +8,7 @@ services:
     environment:
       - HOME=/home/op
       - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      - OPENCODE_SERVER_PASSWORD=changeme
     volumes:
       #- ./home_op:/home/op
       #- ./git/.gitconfig:/home/op/.gitconfig:ro
