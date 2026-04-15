@@ -18,6 +18,9 @@ ENV HOME=/home/op
 # install OpenCode (official installer)
 RUN curl -fsSL https://opencode.ai/install | bash
 
+# Install mobile-shell (for remote access to container)
+RUN npx opencode-mobile install
+
 # ensure opencode bin on PATH for non-login shells
 ENV PATH=/home/op/.opencode/bin:$PATH
 
