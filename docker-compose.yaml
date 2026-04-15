@@ -7,14 +7,18 @@ services:
     #user: "1000:1000"
     ports:
       - 14096:4096
+      - 12048:2048
     environment:
       - HOME=/home/op
       - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-      - OPENCODE_SERVER_PASSWORD=changeme
+      - OPENCODE_SERVER_PASSWORD=l3tm31nn0w
+      - OPENCODE_PORT=2048
+      - OPENCODE_WEB_PORT=4096
+      - OPENCODE_WORKSPACE=/workspace
     volumes:
       #- ./home_op:/home/op
       #- ./git/.gitconfig:/home/op/.gitconfig:ro
       - ./workspace:/workspace
     working_dir: /workspace
     tty: true
-    command: ["opencode", "web", "--hostname", "0.0.0.0", "--port", "4096"]
+    command: ["/home/op/startup.sh"]
