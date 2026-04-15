@@ -2,7 +2,6 @@ services:
   opencode:
     container_name: opencode-client
     image: nexus.server.cranie.com/docker/opencode:latest
-    #network_mode: "host"
     user: "1000:1000"
     ports:
       - "4096:4096"
@@ -10,9 +9,9 @@ services:
       - HOME=/home/op
       - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     volumes:
-      #- ./opencode/config/config.json:/home/op/.config/opencode/config.json:ro
       - ./home_op:/home/op
       - ./git/.gitconfig:/home/op/.gitconfig:ro
       - ./workspace:/workspace
     working_dir: /workspace
     tty: true
+    command: ["opencode", "web", "--hostname", "0.0.0.0", "--port", "4096"]
