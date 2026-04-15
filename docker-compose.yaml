@@ -4,13 +4,13 @@ services:
     image: nexus.server.cranie.com/docker/opencode:latest
     #user: "1000:1000"
     ports:
-      - 14096:4096
+      - 14096:14096
     environment:
       - HOME=/home/op
       - PATH=/home/op/.opencode/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
     volumes:
-      - ./home_op:/home/op
-      - ./git/.gitconfig:/home/op/.gitconfig:ro
+      #- ./home_op:/home/op
+      #- ./git/.gitconfig:/home/op/.gitconfig:ro
       - ./workspace:/workspace
     working_dir: /workspace
     tty: true
