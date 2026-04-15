@@ -41,11 +41,11 @@ pipeline {
       }
     }
 
-    stage('Build Images --no-cache') {
+    stage('Build Images') {
       steps {
         dir("${CODE_NAME}") {
           sh '''
-            TAG=${CODE_NAME}-${CODE_NAME}:${FULL_TAG} docker compose build 
+            TAG=${CODE_NAME}-${CODE_NAME}:${FULL_TAG} docker compose build --no-cache
           '''
         }
       }
