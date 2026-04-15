@@ -2,7 +2,7 @@ services:
   opencode:
     container_name: opencode-client
     image: nexus.server.cranie.com/docker/opencode:latest
-    user: "1000:1000"
+    #user: "1000:1000"
     ports:
       - 14096:4096
     environment:
