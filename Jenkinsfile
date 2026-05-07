@@ -59,6 +59,7 @@ pipeline {
           passwordVariable: 'NEXUS_PASS'
         )]) {
           sh '''
+            printf '%s' "$NEXUS_PASS" | docker login nexus.server.cranie.com -u "$NEXUS_USER" --password-stdin
             echo "$NEXUS_PASS" | docker login ${REGISTRY_URL} -u "$NEXUS_USER" --password-stdin
           '''
         }
