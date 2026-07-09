@@ -2,7 +2,7 @@
 
 cd ${OPENCODE_WORKSPACE}
 nohup opencode web --hostname 0.0.0.0 --port ${OPENCODE_WEB_PORT} &
-
+opencode run hello --print-logs
 # nohup opencode serve --port ${OPENCODE_PORT} --hostname 0.0.0.0 &
 
 # keep container running
