@@ -3,7 +3,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl ca-certificates git openssh-client sudo bash jq iputils-ping \
-    python3 python3-pip nodejs npm \
+    python3 python3-pip nodejs npm xdg-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # non-root user
